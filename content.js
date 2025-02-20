@@ -1,6 +1,8 @@
+console.log("Content script loaded!");
 
 chrome.runtime.onMessage.addListener((message) => {
     if (message.command === "autofill") {
+        console.log(`Autofill triggered with ${message.option}`);
         chrome.storage.sync.get(["formDataSets"], (result) => {
             const formDataSets = result.formDataSets || {};
             const formData = formDataSets[message.option];
@@ -26,4 +28,3 @@ function populateForm(formData) {
 
     console.log("Form autofilled with selected set!");
 }
-    
