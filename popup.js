@@ -37,15 +37,7 @@ function loadFormSets() {
 
 function saveFormSet() {
     const formSetTitle = document.getElementById("formSetTitle").value.trim();
-    let formDataJson = document.getElementById("formDataJson");
-    formDataJson.textContent = {
-        "initial_assessment_summary": "Sample Summary",
-        "root_cause": "Sample Root Cause",
-        "resolution_procedure": "Sample Resolution",
-        "material_used": "Sample Computer",
-        "remarks": "Sample Remarks"
-    };
-    // formDataJson = JSON.stringify(formDataJson);
+    const formDataJson = document.getElementById("formDataJson").value.trim();
 
     if (!formSetTitle || !formDataJson) {
         alert("Please enter a valid form title and JSON data.");
