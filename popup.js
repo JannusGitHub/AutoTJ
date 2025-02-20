@@ -40,7 +40,7 @@ function saveFormSet() {
     const formDataJson = document.getElementById("formDataJson").value.trim();
 
     if (!formSetTitle || !formDataJson) {
-        alert("Please enter a valid form title and JSON data.");
+        alert("Please enter a valid form title and JSON datas.");
         return;
     }
 
