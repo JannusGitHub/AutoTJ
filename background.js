@@ -6,10 +6,10 @@ chrome.commands.onCommand.addListener((command, tab) => {
             target: { tabId: tab.id },
             files: ["content.js"]
         }).then(() => {
-            console.log("✅ content.js injected!");
+            console.log("content.js injected!");
             chrome.tabs.sendMessage(tab.id, { command: "trigger_autofill" });
         }).catch((error) => {
-            console.error("❌ Failed to inject content.js:", error);
+            console.error("Failed to inject content.js:", error);
         });
     }
 });

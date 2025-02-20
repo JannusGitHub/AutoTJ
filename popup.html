@@ -1,34 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AutoTJ</title>
+    <title>AutoTJ Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            background-color: lavender;
+            padding: 10px;
+            width: 450px;
+            text-align: center;
+        }
+        select, button, input, textarea {
+            width: 90%;
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 5px;
+            margin: 3px;
+            border-radius: 5px;
+        }
+        .delete {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        color: #333;
-        background-color: lavender;
-        padding: 10px;
-        width: 220px;
-        text-align: center;
-    }
-    button {
-        margin: 5px;
-        padding: 8px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-</style>
 <body>
-    <div style="text-align: center;">
-        <h3>AutoTJ Extension</h3>
-        <p>Form fields will be auto-filled when detected.</p>
+    <h3>AutoTJ Selection</h3>
+    
+    <label>Select a Form Data Set:</label>
+    <select id="formSetDropdown"></select>
+    <button id="applyFormSet">Apply Selected Set</button>
 
-        <button id="option1">Database Update</button>
-        <button id="option2">Server Restart</button>
+    <hr>
 
-        <script src="popup.js"></script>
-    </div>
+    <h4>Add New Form Data Set</h4>
+    <input type="text" id="formSetTitle" placeholder="Form Title (e.g. IT Request)">
+    <textarea id="formDataJson" rows="7" placeholder='{
+    "initial_assessment_summary": "Sample Summary",
+    "root_cause": "Sample Root Cause",
+    "resolution_procedure": "Sample Resolution",
+    "material_used": "Sample Computer",
+    "remarks": "Sample Remarks"
+}'></textarea>
+    <button id="saveFormSet">Save Form Data</button>
+
+    <h4>Saved Form Sets</h4>
+    <div id="formSetsList"></div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
