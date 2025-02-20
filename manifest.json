@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "AutoTJ Form Filler",
+    "version": "1.0",
+    "description": "Auto Tite ni Jannus fills forms in ISS Service Request.",
+    "permissions": ["scripting", "storage", "activeTab"],
+    "host_permissions": ["http://rapidx/*"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "autotj.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://rapidx/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "commands": {
+        "trigger_autofill": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F"
+            },
+            "description": "Trigger autofill manually"
+        }
+    }
+}
