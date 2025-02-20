@@ -1,4 +1,4 @@
-console.log("✅ Content script loaded!");
+console.log("Content script loaded!");
 
 chrome.runtime.onMessage.addListener((message) => {
     if (message.command === "autofill") {
@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((message) => {
             const formData = formDataSets[message.option];
 
             if (!formData) {
-                console.warn("❌ No form data found for:", message.option);
+                console.warn("No form data found for:", message.option);
                 return;
             }
 
@@ -26,6 +26,6 @@ function populateForm(formData) {
         }
     });
 
-    console.log("✅ Form autofilled with selected set!");
+    console.log("Form autofilled with selected set!");
 }
     
