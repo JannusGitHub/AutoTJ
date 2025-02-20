@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "AutoTJ Form Filler",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Auto Tite ni Jannus fills forms in ISS Service Request.",
     "permissions": ["scripting", "storage", "activeTab"],
     "host_permissions": ["http://rapidx/*"],
