@@ -28,4 +28,3 @@ function populateForm(formData) {
 
     console.log("Form autofilled with selected set!");
 }
-    

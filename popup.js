@@ -23,7 +23,7 @@ function loadFormSets() {
 
             // Display in list with delete button
             const div = document.createElement("div");
-            div.className = "option";
+            div.className = "option d-flex justify-content-between align-items-center border border-success p-2 mb-2";
             div.innerHTML = `
                 <span>${title}</span>
                 <span class="delete" data-key="${title}">Delete</span>
